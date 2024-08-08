@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingAlert = false
+    
+    
     var body: some View {
-        LinearGradient(stops: [
-            Gradient.Stop(color: .gray, location: 0.1),
-            Gradient.Stop(color: .blue, location: 0.9)
-        ], startPoint: .top, endPoint: .bottom)
-        .ignoresSafeArea()
+        VStack {
+            Button("Show Alert") {
+                showingAlert = true
             }
+            .alert("ARE YOU SURE?", isPresented: $showingAlert) {
+                Button("YES!", role: .destructive)  { }
+                Button("NO!", role: .cancel) { }
+            } message: {
+                Text("This delete's everything forever")
+            }
+        }
+    }
 }
 
 
