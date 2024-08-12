@@ -14,6 +14,8 @@ struct ContentView: View {
     @State private var date: Date = Date()
     @State private var totalEarnings: Double = 0.0
     @State private var tipEntries: [TipEntry] = []
+    @FocusState private var amountIsFocused: Bool
+
 
     var body: some View {
         NavigationView {
@@ -22,36 +24,47 @@ struct ContentView: View {
                     Section(header: Text("Enter Your Details")) {
                         TextField("Credit Card Tips", text: $creditCardTips)
                             .keyboardType(.decimalPad)
+                            .focused($amountIsFocused)
                         TextField("Cash Tips", text: $cashTips)
                             .keyboardType(.decimalPad)
+                            .focused($amountIsFocused)
                         TextField("Hours Worked", text: $hoursWorked)
                             .keyboardType(.decimalPad)
+                            .focused($amountIsFocused)
                         DatePicker("Date", selection: $date, displayedComponents: .date)
                     }
                 }
-
-                Button(action: calculateTotalEarnings) {
-                    Text("Calculate")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                .toolbar {
+                    if amountIsFocused {
+                        Button("Done") {
+                            amountIsFocused = false
+                        }
+                    }
                 }
-                .padding()
-
-                Text("Total Earnings: \(totalEarnings, specifier: "%.2f")")
+                VStack {
+                    Button(action: calculateTotalEarnings) {
+                        Text("Calculate")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
                     .padding()
 
-                NavigationLink(destination: PaycheckView(tipEntries: $tipEntries)) {
-                    Text("View Current Paycheck")
-                        .frame(maxWidth: .infinity)
+                    Text("Total Earnings: \(totalEarnings, specifier: "%.2f")")
                         .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+
+                    NavigationLink(destination: PaycheckView(tipEntries: $tipEntries)) {
+                        Text("View Current Paycheck")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .padding()
                 }
-                .padding()
 
                 Spacer()
             }
