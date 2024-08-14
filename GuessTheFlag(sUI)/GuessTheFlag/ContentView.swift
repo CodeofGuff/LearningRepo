@@ -37,7 +37,8 @@ struct ContentView: View {
                 Text("Guess the Flag!")
                     .font(.largeTitle.bold())
                     .foregroundStyle(.white)
-                    
+                Spacer()
+                Spacer()
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
@@ -63,6 +64,7 @@ struct ContentView: View {
                 .padding(.vertical, 20)
                 .background(.regularMaterial)
                 .clipShape(.rect(cornerRadius: 20))
+                
                 
                 Spacer()
                 Spacer()

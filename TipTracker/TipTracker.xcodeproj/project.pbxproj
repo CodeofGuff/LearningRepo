@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B83EAC642C2408D900F10B0A /* TipTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83EAC632C2408D900F10B0A /* TipTrackerApp.swift */; };
-		B83EAC662C2408D900F10B0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83EAC652C2408D900F10B0A /* ContentView.swift */; };
 		B83EAC682C2408DA00F10B0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B83EAC672C2408DA00F10B0A /* Assets.xcassets */; };
 		B83EAC6B2C2408DA00F10B0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B83EAC6A2C2408DA00F10B0A /* Preview Assets.xcassets */; };
 		B83EAC722C24094100F10B0A /* PaycheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83EAC712C24094100F10B0A /* PaycheckView.swift */; };
+		B8B026002C69F7F100384111 /* ContView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B025FF2C69F7F100384111 /* ContView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B83EAC602C2408D900F10B0A /* TipTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83EAC632C2408D900F10B0A /* TipTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTrackerApp.swift; sourceTree = "<group>"; };
-		B83EAC652C2408D900F10B0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B83EAC672C2408DA00F10B0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B83EAC6A2C2408DA00F10B0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B83EAC712C24094100F10B0A /* PaycheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycheckView.swift; sourceTree = "<group>"; };
+		B8B025FF2C69F7F100384111 /* ContView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				B83EAC632C2408D900F10B0A /* TipTrackerApp.swift */,
-				B83EAC652C2408D900F10B0A /* ContentView.swift */,
+				B8B025FF2C69F7F100384111 /* ContView.swift */,
 				B83EAC712C24094100F10B0A /* PaycheckView.swift */,
 				B83EAC672C2408DA00F10B0A /* Assets.xcassets */,
 				B83EAC692C2408DA00F10B0A /* Preview Content */,
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83EAC662C2408D900F10B0A /* ContentView.swift in Sources */,
+				B8B026002C69F7F100384111 /* ContView.swift in Sources */,
 				B83EAC722C24094100F10B0A /* PaycheckView.swift in Sources */,
 				B83EAC642C2408D900F10B0A /* TipTrackerApp.swift in Sources */,
 			);
