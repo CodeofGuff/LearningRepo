@@ -11,23 +11,19 @@ struct ContentView: View {
         
     var body: some View {
         ZStack {
-            Color(red: 21/255, green: 21/255, blue:21/255)
+            Color(red: 21/255, green: 21/255, blue:21/255).ignoresSafeArea()
 
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
+                Image(systemName: "macpro.gen1.fill")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .foregroundStyle(.red)
+                Text("Hello, David")
                     .foregroundStyle(.yellow)
                     .font(.largeTitle)
                     .bold()
-                
-                
             }
-            
-            .padding()
         }
-        .ignoresSafeArea()
     }
 }
 
