@@ -16,7 +16,6 @@ struct ContentView: View {
     @State private var coffeeAmount = 1
     
     
-    // changing the default wake up time
     static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 8

@@ -1,15 +1,20 @@
 //
 //  UserData.swift
-//  UserData
+//  RandomUser(CC)
 //
-//  Created by Ben Stone on 9/9/21.
+//  Created by David Guffre on 8/15/24.
 //
 
 import Foundation
 
+
+
+// retrieve data from the Random User Generated API and store it into your Random Users application
+
+// All UI Updates MUST Occure on the main thread
 @MainActor
 class UserData: ObservableObject {
-    @Published var users: [User] = []
+    @Published var users: String = ""
     
     init() {
         Task {

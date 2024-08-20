@@ -1,14 +1,14 @@
 //
-//  RandomUser_CC_App.swift
-//  RandomUser(CC)
+//  RandomUsersApp.swift
+//  RandomUsers
 //
-//  Created by David Guffre on 8/15/24.
+//  Created by Ben Stone on 9/9/21.
 //
 
 import SwiftUI
 
 @main
-struct RandomUser_CC_App: App {
+struct RandomUsersApp: App {
     var body: some Scene {
         WindowGroup {
             UsersView()
