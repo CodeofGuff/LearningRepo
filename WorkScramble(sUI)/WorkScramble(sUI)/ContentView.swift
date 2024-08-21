@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
 	
+	
+	@State var mainColor = Color(red: 30/255, green: 30/255, blue: 30/255)
+
+	
 	var body: some View {
 		ZStack {
-			Color(red: 21/255, green: 21/255, blue:21/255).ignoresSafeArea()
+			mainColor.ignoresSafeArea()
+			
 			
 			VStack {
 				Image(systemName: "macpro.gen1.fill")
