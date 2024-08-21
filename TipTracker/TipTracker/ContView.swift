@@ -13,7 +13,9 @@ struct ContView: View {
     @State private var numberOfPeople = 0
     @State private var tipPercentage = 20
     @FocusState private var amountIsFocused: Bool
-    
+
+
+    // This is ugly.. How fix? 
     let tipPercentages = [0, 15, 20, 25, 30]
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
