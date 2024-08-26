@@ -9,6 +9,8 @@
 
 
 // ADD A RESET FUNCTION WHEN THE CORRET ANSWRS = 8
+// When you tap a flag, make it spin around 360 degrees on the Y axis.
+// Make the other two buttons fade out to 25% opacity
 
 
 
