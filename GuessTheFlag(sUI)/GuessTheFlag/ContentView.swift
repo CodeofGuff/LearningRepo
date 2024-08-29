@@ -8,7 +8,7 @@
 
 
 
-// ADD A RESET FUNCTION WHEN THE CORRET ANSWRS = 8
+// ADD A RESET FUNCTION WHEN THE CORRET ANSWERS = 8
 // When you tap a flag, make it spin around 360 degrees on the Y axis.
 // Make the other two buttons fade out to 25% opacity
 
@@ -19,10 +19,12 @@ import SwiftUI
 struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
+
     
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var score = 0
+	
     
     var body: some View {
         

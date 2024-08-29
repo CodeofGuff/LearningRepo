@@ -9,6 +9,7 @@ import SwiftUI
 
 
 //Put a text view somewhere so you can track and show the player’s score for a given root word. How you calculate score is down to you, but something involving number of words and their letter count would be reasonable.
+// Overhaul UI and GameStaten(manual reset of game only via alert)
 
 struct ContentView: View {
 	
