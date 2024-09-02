@@ -9,57 +9,58 @@ import SwiftUI
 struct ContentView: View {
 	@State private var animationAmount: Double = 0.0
 	@State var mainColor = Color(red: 30/255, green: 30/255, blue: 30/255)
-	@State private var showingSheet = false
+	
+	
+	let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+	let missions: [Mission] = Bundle.main.decode("missions.json")
+	
+	let columns = [
+		GridItem(.adaptive(minimum: 150))
+	]
 	
 	var body: some View {
-		ZStack {
-			mainColor.ignoresSafeArea()
-			
-			VStack {
-				Button(action: {
-					withAnimation {
-						animationAmount += 360
-						showingSheet.toggle()
+		NavigationStack {
+			ScrollView {
+				LazyVGrid(columns: columns) {
+					ForEach(missions) { mission in
+						NavigationLink {
+							MissionView(mission: mission, astronauts: astronauts)
+						} label: {
+							VStack {
+								Image(mission.image)
+									.resizable()
+									.scaledToFit()
+									.frame(width: 100, height: 100)
+									.padding()
+								
+								VStack {
+									Text(mission.displayName)
+										.font(.headline)
+										.foregroundStyle(.yellow)
+									Text(mission.formattedLaunchDate)
+										.font(.caption)
+										.foregroundStyle(.gray)
+								}
+								.padding(.vertical)
+								.frame(maxWidth: .infinity)
+								.background(.lightBackground)
+							}
+							.clipShape(.rect(cornerRadius: 10))
+							.overlay(
+							RoundedRectangle(cornerRadius: 10)
+								.stroke(.lightBackground)
+							)
+						}
 					}
-				}) {
-					
-					Image(systemName: "macpro.gen1.fill")
-						.resizable()
-						.frame(width: 50, height: 50)
-						.foregroundStyle(.red)
-						.rotationEffect(.degrees(animationAmount))
-					
 				}
-				.sheet(isPresented: $showingSheet) {
-					SecondView()
-				}
-				Text("Hello David")
-					.font(.largeTitle)
-					.bold()
-					.foregroundStyle(.yellow)
+				.padding([.horizontal, .bottom])
 			}
-			
-		}
-		
-		
-		
-	}
-}
-
-struct SecondView: View {
-	@State var mainColor = Color(red: 30/255, green: 30/255, blue: 30/255)
-	@Environment(\.dismiss) var dismiss
-	var body: some View {
-		ZStack {
-			mainColor.ignoresSafeArea()
-			Text("Error: ----->         immediately")
-			Button("exit") {
-				dismiss()
-			}
+			.navigationTitle("Moonshot")
+			.background(.darkBackground)
+			.preferredColorScheme(.dark)
 		}
 	}
 }
-
 
 #Preview {
 	ContentView()
