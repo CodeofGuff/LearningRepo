@@ -40,6 +40,8 @@ struct ContentView: View {
 				
 			}
 			.navigationTitle("Cupcake Corner")
+			.navigationBarTitleDisplayMode(.automatic)
+			
 		}
 	}
 }
