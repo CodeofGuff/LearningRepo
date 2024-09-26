@@ -11,7 +11,7 @@
 // Challange
 // Rebrand with the red/grey/yellow colors
 // Split expeneses into Personal and Business
-// Contain styling / $$$ signs dpeending on dollar amount ($10, $100, $1000, etc)
+// Contain styling / $$$ signs depending on dollar amount ($10, $100, $1000, etc)
 
 
 import SwiftUI
